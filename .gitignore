@@ -1,0 +1,37 @@
+# secrets / auth — never commit
+session.json
+*.token
+*.key
+.env
+.env.*
+
+# databases & large data
+*.duckdb
+*.sqlite
+*.sqlite3
+*.csv
+*.parquet
+options_data/
+captured_options/
+trakkr_bias_data/
+
+# binary / image artifacts (kept locally, not in repo)
+*.png
+*.jpg
+*.jpeg
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# tooling / OS
+.claude/
+.nul
+nul
+Thumbs.db
+.DS_Store
