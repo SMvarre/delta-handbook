@@ -1,0 +1,15 @@
+[project]
+name = "delta-handbook"
+version = "0.1.0"
+description = "Auto-download and ingest Delta Exchange monthly options/futures trade archives into local DuckDB databases"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "nodriver>=0.50.3",
+    "requests>=2.32.5",
+    "duckdb>=1.4.2",
+    "playwright>=1.61.0",
+]
+
+[tool.uv]
+package = false

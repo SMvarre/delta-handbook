@@ -16,20 +16,25 @@ Auto-download and ingest Delta Exchange monthly options/futures trade archives i
 ## Quick start
 
 ```bash
+# install dependencies (creates .venv)
+uv sync
+
 # 1. Log in once (Chrome opens, token stays in memory only)
-python download_monthly_archives.py --underlying BTC,ETH --contract-type options
+uv run python download_monthly_archives.py --underlying BTC,ETH --contract-type options
 
 # 2. Load the archives into DuckDB
-python load_options_db.py
+uv run python load_options_db.py
 
 # 3. Verify the handbook conformance suite
-python test_handbook.py
+uv run python test_handbook.py
 ```
+
+Requires [uv](https://docs.astral.sh/uv/) (`pip install uv` or `brew install uv`).
 
 ## Requirements
 
-- Python 3.9+
-- `nodriver`, `requests`, `duckdb`
+- Python 3.11+
+- `nodriver`, `requests`, `duckdb`, `playwright` (pinned in `pyproject.toml`)
 - Chrome installed (for the login flow)
 
 ## Why a handbook?
